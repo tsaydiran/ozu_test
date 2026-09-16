@@ -48,8 +48,8 @@ jobs:
       - name: Publish test report
         if: always()
         run:
-          echo "### Test Results" >> $GITHUB_STEP_SUMMARY
-          cat test-output.txt >> $GITHUB_STEP_SUMMARY
+          echo "### Test Results" &gt;&gt; $GITHUB_STEP_SUMMARY
+          cat test-output.txt &gt;&gt; $GITHUB_STEP_SUMMARY
 
   security:
     needs: test
@@ -58,11 +58,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          pyyhon-version: "3.12"
+          python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Scan dependencies
-        run: 
+        run: |
           pip install pip-audit
           pip-audit
 
@@ -77,9 +77,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run static analysis
-        run:
+        run: |
           pip install bandit
-          bandit -r . -ll
+          bandit -r . -ll  
   
   docker: 
     runs-on: ubuntu-latest
