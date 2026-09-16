@@ -48,8 +48,8 @@ jobs:
       - name: Publish test report
         if: always()
         run:
-          echo "### Test Results" &gt;&gt; $GITHUB_STEP_SUMMARY
-          cat test-output.txt &gt;&gt; $GITHUB_STEP_SUMMARY
+          echo "### Test Results" >> $GITHUB_STEP_SUMMARY
+          cat test-output.txt >> $GITHUB_STEP_SUMMARY
 
   security:
     needs: test
