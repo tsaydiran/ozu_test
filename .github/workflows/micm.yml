@@ -21,7 +21,7 @@ jobs:
           python-version: "3.12"
           
       - name: Install pytest
-        run: pip install pytest -r reqiuriements.txt
+        run: pip install pytest -r reqiurements.txt
 
       - name: build
         run: pytest -m compileall .
@@ -37,7 +37,7 @@ test:
         with:
           python-version: "3.12"
           
-      - name: Install pytest -r reqiuriements.txt
+      - name: Install pytest -r reqiurements.txt
         run: pip install pytest
 
       - name: Run tests
