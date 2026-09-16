@@ -25,7 +25,7 @@ jobs:
         run: pip install pytest -r requirements.txt
 
       - name: build
-        run: pytest -m compileall .
+        run: python -m compileall .
 
   test:
     needs: build
