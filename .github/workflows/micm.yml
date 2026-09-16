@@ -54,7 +54,7 @@ jobs:
         with:
           pyyhon-version: "3.12"
       - name: Install dependencies
-        run: pip install -r reqiurements.txt
+        run: pip install -r requirements.txt
       - name: Scan dependencies
         run: 
           pip install pip-audit
