@@ -56,8 +56,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r reqiurements.txt
       - name: Scan dependencies
-        run: Run tests
-        pip-audit
+        run: 
+          pip install pip-audit
+          pip-audit
 
   docker: 
     runs-on: ubuntu-latest
