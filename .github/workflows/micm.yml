@@ -9,7 +9,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -19,8 +19,27 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          
       - name: Install pytest
+        run: pip install pytest -r reqiuriements.txt
+
+      - name: build
+        run: pytest -m compileall .
+test:
+  needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          
+      - name: Install pytest -r reqiuriements.txt
         run: pip install pytest
 
-      - name: Run test
-        run: pytest 
+      - name: Run tests
+        run: pytest
+      
