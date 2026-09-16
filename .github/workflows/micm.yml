@@ -9,6 +9,7 @@ permissions:
   pull-requests: write
 
 jobs:
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -25,8 +26,9 @@ jobs:
 
       - name: build
         run: pytest -m compileall .
-test:
-  needs: build
+
+  test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
