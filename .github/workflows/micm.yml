@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setuo-python@v5
+      - uses: actions/setup-python@v5
         with:
           pyyhon-version: "3.12"
       - name: Install dependencies
